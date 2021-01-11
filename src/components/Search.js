@@ -1,19 +1,33 @@
 import React from 'react';
 
-const Search = () => {
+const Search = ({ setResults }) => {
 
-    const [movie, setMovie] = React.useState('')
+    const handleInputChange = (e) => {
+        const query = e.target.value
+        if (!!query) {
+            getMovies(query)
+        }
+    }
+
+    const getMovies = async (query) => {
+        const url = `http://www.omdbapi.com/?apikey=59ccd6eb&s=${query}&type=movie`
+        const response = await fetch(url);
+        const jsonData = await response.json();
+        if (!jsonData.Error) {
+            setResults(jsonData.Search)
+            console.log(jsonData.Search)
+        } 
+    }
 
     return (
         <div>
             <h3>Search Movies</h3>
             <input 
-            name="search"
-            // style={BarStyling}
-            placeholder="i.e. Terminator"
-            onChange={(e) => setMovie(e.target.value)}
+                name="search"
+                // style={BarStyling}
+                placeholder="i.e. Terminator"
+                onChange={(e) => handleInputChange(e)}
             />
-            <h1> {movie} </h1>
         </div>
     )
 }
