@@ -1,19 +1,22 @@
 import React from 'react';
+// import Movie from './Movie'
 
 class SearchResults extends React.Component {
 
     render() {
 
         const resultsJSX = this.props.movies.map(movie => 
-            <ul key={movie.imdbId}>
-                <li>{ movie.Title }  { movie.Year }  <button>Nominate</button></li>
-            </ul>)
+ 
+            <li key={movie.imdbId}> { movie.Title }  { movie.Year }  <button onClick={ () => this.props.addNomination(movie)} disabled={this.props.nominations.includes(movie)}>Nominate</button></li>
+      
+        )
+
 
         return (
-            <container className="searchResults"> 
+            <div className="searchResults"> 
                 <h3>Search Results</h3>
                 { resultsJSX }
-            </container>
+            </div>
         )
     }
 }
