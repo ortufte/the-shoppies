@@ -1,3 +1,4 @@
+
 import React from 'react';
 // import Movie from './Movie'
 
@@ -7,10 +8,14 @@ class SearchResults extends React.Component {
 
         const resultsJSX = this.props.movies.map(movie => 
  
-            <li key={movie.imdbId}> { movie.Title }  { movie.Year }  <button onClick={ () => this.props.addNomination(movie)} disabled={this.props.nominations.includes(movie)}>Nominate</button></li>
-      
+            <li key={movie.imdbID}>
+                { movie.Title }  { movie.Year }  
+                <button 
+                    onClick={ () => this.props.addNomination(movie)} 
+                    disabled={this.props.nominations.some(m => m.imdbID === movie.imdbID)}
+                >Nominate</button>
+            </li>
         )
-
 
         return (
             <div className="searchResults"> 
