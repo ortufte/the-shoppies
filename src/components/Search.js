@@ -4,7 +4,10 @@ const Search = ({ setResults }) => {
 
     const handleInputChange = (e) => {
         const query = e.target.value
-        if (!!query) {
+        if (query.length < 3) {
+            setResults([])
+        }
+        else if (query.length >= 3) {
             getMovies(query)
         }
     }
