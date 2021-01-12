@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Search from './components/Search';
 import SearchResults from './components/SearchResults';
 import Nominations from './components/Nominations';
@@ -8,6 +8,17 @@ function App() {
 
   const [movies, setMovies] = useState([])
   const [nominations, setNominations] = useState([])
+
+  //* nominations are stored in local storage and remain after page refresh
+  //* meets the extra feature "Save nomination lists if the user leaves the page"
+  useEffect(() => {
+    const noms = JSON.parse(localStorage.getItem("noms") || "[]")
+    setNominations(noms)
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem("noms", JSON.stringify(nominations))
+  }, [nominations])
   
   const setResults = (movies) => {
     setMovies([]);
