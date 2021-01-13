@@ -1,4 +1,5 @@
 import React from 'react';
+import { Input } from '@material-ui/core';
 
 const Search = ({ setResults }) => {
 
@@ -25,10 +26,10 @@ const Search = ({ setResults }) => {
     return (
         <div>
             <h3>Search Movies</h3>
-            <input 
-                name="search"
-                // style={BarStyling}
-                placeholder="i.e. Terminator"
+            <Input 
+                type="search"
+                fullWidth="true"
+                placeholder="   i.e. Terminator"
                 onChange={(e) => handleInputChange(e)}
             />
         </div>

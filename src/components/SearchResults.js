@@ -1,6 +1,5 @@
-
 import React from 'react';
-// import Movie from './Movie'
+import { Typography, Button } from '@material-ui/core';
 
 class SearchResults extends React.Component {
 
@@ -9,11 +8,12 @@ class SearchResults extends React.Component {
         const resultsJSX = this.props.movies.map(movie => 
  
             <li key={movie.imdbID}>
-                { movie.Title }  { movie.Year }  
-                <button 
+                {/* <img src={nom.Poster} alt={nom.Title} /> */}
+                <Typography variant="h3"> { movie.Title }  { movie.Year } </Typography>
+                <Button 
                     onClick={ () => this.props.addNomination(movie)} 
                     disabled={this.props.nominations.some(m => m.imdbID === movie.imdbID)}
-                >Nominate</button>
+                >Nominate</Button>
             </li>
         )
 
