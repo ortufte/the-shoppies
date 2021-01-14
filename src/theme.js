@@ -2,29 +2,22 @@ import { createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
   overrides: {
-    // MuiDialogContentText: {
-    //   root: {
-    //     color: '#202224',
-    //     fontFamily: "Montserrat",
-    //     fontSize: 'rem',
-    //   },
-    // },
     MuiGridListTileBar: {
         title: {
-            color: '#d4af37',
+            color: '#ffffff',
             size: '1.5rem',
             fontFamily: "Montserrat",
         },
-        titleBar: {
-            background:
+        root: {
+            backgroundColor:
                 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
         }
     },
-    // MuiIconButton: {
-    //     root: {
-    //         color: '#ffffff',
-    //     },
-    // },
+    MuiIconButton: {
+        root: {
+            color: '#ffffff',
+        },
+    },
     MuiBottomNavigation: {
         root: {
          backgroundColor: '#000000',
@@ -39,15 +32,16 @@ const theme = createMuiTheme({
             "&:hover": {
                 backgroundColor: '#d4af37',
               },
-        },
-        disabled: {
-            opacity: '10%',
+            "&$disabled": {
+                opacity: "40%"
+              },
         },
     },
     MuiInputBase: {
         input: {
             color: '#000000',
             backgroundColor: '#ffffff',
+            padding: '7px 7px 7px',
         }
     },
     MuiToolbar: {
@@ -89,13 +83,14 @@ const theme = createMuiTheme({
       color: '#d4af37',
       fontSize: '1.5rem'
     },
-    //About section "The Shoppies"
+    //About dialog title 
     h5: {
       fontFamily: "'Great Vibes', cursive",
       fontStyle: "bold",
       fontSize: '2rem',
     },
-    p: {
+    // About dialog body
+    body1: {
       fontFamily: "Montserrat",
     },
     //button text
@@ -103,6 +98,10 @@ const theme = createMuiTheme({
       textTransform: 'none',
       fontFamily: "Montserrat",
     },
+    //banner text
+    body2: {
+      fontFamily: "Montserrat",
+    }
   },
 });
 

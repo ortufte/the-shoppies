@@ -19,17 +19,15 @@ const Search = ({ setResults }) => {
         const jsonData = await response.json();
         if (!jsonData.Error) {
             setResults(jsonData.Search)
-            console.log(jsonData.Search)
         } 
     }
 
     return (
         <div>
-            <h3>Search Movies</h3>
             <Input 
                 type="search"
-                fullWidth="true"
-                placeholder="   i.e. Terminator"
+                fullWidth
+                placeholder="i.e. Terminator"
                 onChange={(e) => handleInputChange(e)}
             />
         </div>

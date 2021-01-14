@@ -85,7 +85,7 @@ export default function Information() {
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose} color="primary">
-            Ok
+            OK
           </Button>
         </DialogActions>
       </Dialog>

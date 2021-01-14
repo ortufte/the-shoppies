@@ -8,7 +8,6 @@ class SearchResults extends React.Component {
         const resultsJSX = this.props.movies.map(movie => 
  
             <li key={movie.imdbID}>
-                {/* <img src={nom.Poster} alt={nom.Title} /> */}
                 <Typography variant="h4"> { movie.Title }  { movie.Year } </Typography>
                 <Button 
                     size="small"
@@ -20,7 +19,6 @@ class SearchResults extends React.Component {
 
         return (
             <div className="searchResults" > 
-                <h3>Search Results</h3>
                 { resultsJSX }
             </div>
         )
