@@ -2,34 +2,34 @@ import { createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
   overrides: {
-    // Style sheet name ⚛️
-    MuiDialogContentText: {
-      // Name of the rule
-      root: {
-        // Some CSS
-        color: '#202224',
-        fontFamily: "Montserrat",
-        fontSize: '1rem',
-      },
-    },
+    // MuiDialogContentText: {
+    //   root: {
+    //     color: '#202224',
+    //     fontFamily: "Montserrat",
+    //     fontSize: 'rem',
+    //   },
+    // },
     MuiGridListTileBar: {
         title: {
             color: '#d4af37',
             size: '1.5rem',
+            fontFamily: "Montserrat",
         },
         titleBar: {
             background:
                 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
         }
     },
-    MuiIconButton: {
-        root: {
-            color: '#d4af37',
-        },
-    },
+    // MuiIconButton: {
+    //     root: {
+    //         color: '#ffffff',
+    //     },
+    // },
     MuiBottomNavigation: {
         root: {
-            backgroundColor: '#000000'
+         backgroundColor: '#000000',
+         width: '100%',
+         marginTop: '5rem'
         },
     },
     MuiButton: {
@@ -54,7 +54,7 @@ const theme = createMuiTheme({
         root: {
             marginBottom: '6rem'
         }
-    }
+    },
 },
   palette: {
     primary: {
@@ -65,35 +65,43 @@ const theme = createMuiTheme({
     },
 },
   typography: {
-    // website description heading
+    // Search our db, your 2021 nominees
     h1: {
-      fontFamily: "Montserrat",
-      fontSize: '3rem',
-      color: '#ffffff'
-    },
-    // Nominees Heading
-    subtitle1: {
       fontFamily: "'Great Vibes', cursive",
       fontSize: '4rem',
       color: '#d4af37'
     },
-    //header logo and movie search results
+    // dialog titles
+    subtitle1: {
+      fontFamily: "Montserrat",
+      fontSize: '1.5rem',
+      color: '#000000'
+    },
+    //header logo
     h3: {
       fontFamily: "Montserrat",
       fontSize: '2rem',
       color: '#d4af37'
     },
-
+    // movie search results
     h4: {
-      color: '#d4af37',
       fontFamily: "Montserrat",
-    //   fontSize: '1.5rem'
+      color: '#d4af37',
+      fontSize: '1.5rem'
+    },
+    //About section "The Shoppies"
+    h5: {
+      fontFamily: "'Great Vibes', cursive",
+      fontStyle: "bold",
+      fontSize: '2rem',
+    },
+    p: {
+      fontFamily: "Montserrat",
     },
     //button text
     button: {
       textTransform: 'none',
-      fontFamily: "'Great Vibes', cursive",
-      fontSize: '1.5rem'
+      fontFamily: "Montserrat",
     },
   },
 });

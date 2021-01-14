@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
     },
     gridList: {
       flexWrap: 'nowrap',
-      // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
       transform: 'translateZ(0)',
       backgroundColor: '#000000'
     },
@@ -28,7 +27,8 @@ const Nominations = ({ nominations, removeNomination }) => {
     const classes = useStyles();
         return (
           <div>
-            { nominations.length > 0 ? <Typography variant="subtitle1" align="center">Your 2021 Nominees</Typography> : null }
+            { nominations.length > 0 ? <Typography variant="h1" align="center">Your 2021 Nominees</Typography> : null }
+            <br></br>
             <div className={classes.root} >
               <GridList className={classes.gridList} cols={5}>
                 {nominations.map((nom) => (
@@ -48,7 +48,7 @@ const Nominations = ({ nominations, removeNomination }) => {
             </div>
           </div>
         )
-
+        
 }
 
 export default Nominations;

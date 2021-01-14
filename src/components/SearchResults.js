@@ -9,8 +9,9 @@ class SearchResults extends React.Component {
  
             <li key={movie.imdbID}>
                 {/* <img src={nom.Poster} alt={nom.Title} /> */}
-                <Typography variant="h3"> { movie.Title }  { movie.Year } </Typography>
+                <Typography variant="h4"> { movie.Title }  { movie.Year } </Typography>
                 <Button 
+                    size="small"
                     onClick={ () => this.props.addNomination(movie)} 
                     disabled={this.props.nominations.some(m => m.imdbID === movie.imdbID)}
                 >Nominate</Button>
@@ -18,7 +19,7 @@ class SearchResults extends React.Component {
         )
 
         return (
-            <div className="searchResults"> 
+            <div className="searchResults" > 
                 <h3>Search Results</h3>
                 { resultsJSX }
             </div>
