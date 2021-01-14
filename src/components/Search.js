@@ -12,9 +12,10 @@ const Search = ({ setResults }) => {
             getMovies(query)
         }
     }
+    const API_KEY = process.env.REACT_APP_OMDB_API_KEY;
 
     const getMovies = async (query) => {
-        const url = `http://www.omdbapi.com/?apikey=59ccd6eb&s=${query}&type=movie`
+        const url = `https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}&type=movie`
         const response = await fetch(url);
         const jsonData = await response.json();
         if (!jsonData.Error) {
